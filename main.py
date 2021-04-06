@@ -57,8 +57,17 @@ def main():
                             user_id=event.obj.message['from_id'],
                             random_id=get_random_id(),
                             keyboard=keyboard.get_keyboard(),
-                            message='Я пока не умею такое делать, простите меня пожалуйста '
+                            message='Попробую отправить.....'
                         )
+                        upload = vk_api.VkUpload(vk)
+                        photo = upload.photo_messages(f'{random.randint(1, 7)}.jpg')
+                        owner_id = photo[0]['owner_id']
+                        photo_id = photo[0]['id']
+                        access_key = photo[0]['access_key']
+                        attachment = f'photo{owner_id}_{photo_id}_{access_key}'
+                        vk.messages.send(peer_id=event.object.peer_id,
+                                         random_id=get_random_id(),
+                                         attachment=attachment)
                 elif 'Сделать картиночку' in str(event):
                     if event.from_user:
                         vk.messages.send(
