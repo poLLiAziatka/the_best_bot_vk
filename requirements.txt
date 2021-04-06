@@ -27,7 +27,6 @@ discord.py==1.6.0
 docopt==0.6.2
 entrypoints==0.3
 fabric==2.5.0
-Flask==0.12.2
 gast==0.3.3
 google-auth==1.20.1
 google-auth-oauthlib==0.4.1
