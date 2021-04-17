@@ -15,7 +15,7 @@ f.close()
 
 def main():
     vk_session = vk_api.VkApi(
-        token='46aec0ebeb9e328d2676b1ba2df18671da076247942844127249910bb90cd2bea738e794f431f5554be75')
+        token='')
     vk = vk_session.get_api()
 
     longpoll = VkBotLongPoll(vk_session, 203559408)
